@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦞 Crayfish Growth Guide - Baby to Adult (Tropical Backyard)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #0a3d2e 0%, #1e5f3f 50%, #2d8b57 100%); 
+            color: #fff; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.3); margin-bottom: 40px; border-radius: 20px; }
+        h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); }
+        .subtitle { font-size: 1.4em; opacity: 0.9; }
+        .progress-bar { 
+            background: rgba(255,255,255,0.2); 
+            height: 8px; 
+            border-radius: 4px; 
+            margin: 30px 0; 
+            overflow: hidden;
+        }
+        .progress-fill { 
+            height: 100%; 
+            background: linear-gradient(90deg, #ff6b35, #f7931e, #ffd23f); 
+            transition: width 0.5s ease;
+            border-radius: 4px;
+        }
+        .stage { 
+            background: rgba(255,255,255,0.1); 
+            padding: 30px; 
+            margin: 30px 0; 
+            border-radius: 20px; 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .stage::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+        }
+        .stage h2 { 
+            font-size: 2.2em; 
+            margin-bottom: 20px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px;
+        }
+        .stage-icon { font-size: 2.5em; }
+        .requirements-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin: 25px 0;
+        }
+        .req-card { 
+            background: rgba(0,0,0,0.3); 
+            padding: 20px; 
+            border-radius: 15px; 
+            border-left: 5px solid #ff6b35;
+        }
+        .req-card h4 { color: #ffd23f; margin-bottom: 10px; }
+        .checklist { list-style: none; }
+        .checklist li { 
+            padding: 8px 0; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            font-size: 1.1em;
+        }
+        .checklist li::before { content: '✅'; font-size: 1.2em; }
+        .warning { 
+            background: #ff4444; 
+            color: white; 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin: 20px 0; 
+            border-left: 5px solid #ff0000;
+        }
+        .protip { 
+            background: #4ecdc4; 
+            color: #1a1a1a; 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin: 20px 0;
+        }
+        .calculator { 
+            background: rgba(0,0,0,0.4); 
+            padding: 25px; 
+            border-radius: 15px; 
+            margin: 30px 0;
+            text-align: center;
+        }
+        input[type="number"] { 
+            padding: 12px; 
+            font-size: 18px; 
+            border: none; 
+            border-radius: 8px; 
+            width: 120px; 
+            margin: 10px;
+        }
+        button { 
+            background: linear-gradient(45deg, #ff6b35, #f7931e); 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            border-radius: 25px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        button:hover { transform: scale(1.05); }
+        .result { 
+            font-size: 2em; 
+            font-weight: bold; 
+            margin-top: 15px; 
+            padding: 15px; 
+            background: rgba(255,255,255,0.2); 
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .stage h2 { font-size: 1.8em; }
+            .requirements-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦞 Crayfish Growth Guide</h1>
+            <p class="subtitle">From Tiny Craylings to Market-Ready Adults (90 Days • Tropical Climate)</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+            </div>
+        </header>
+
+        <!-- STAGE 1: CRAYLINGS (0-30 Days) -->
+        <section class="stage" data-progress="25">
+            <h2><span class="stage-icon">👶</span> Stage 1: Craylings (0-30 Days)</h2>
+            <div class="warning">
+                <strong>⚠️ CRITICAL PHASE:</strong> 70% die here without proper care!
+            </div>
+            
+            <div class="requirements-grid">
+                <div class="req-card">
+                    <h4>🛢️ Container</h4>
+                    <ul class="checklist">
+                        <li>10-20L per 100 craylings</li>
+                        <li>Shallow water (5-8cm deep)</li>
+                        <li>Java Moss carpet (essential!)</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>💧 Water</h4>
+                    <ul class="checklist">
+                        <li>26-28°C</li>
+                        <li>pH 7.0-8.0</li>
+                        <li>100% daily water change</li>
+                        <li>Aeration ESSENTIAL</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>🍲 Food</h4>
+                    <ul class="checklist">
+                        <li>Artemia (baby brine shrimp)</li>
+                        <li>Micro-worms</li>
+                        <li>Infusoria (boil lettuce)</li>
+                        <li>Feed 4x daily, tiny amounts</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>📏 Size Goal</h4>
+                    <ul class="checklist">
+                        <li>Start: 3-5mm</li>
+                        <li>End: 1-2cm</li>
+                        <li>Survival: 50%+ target</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="protip">
+                💡 <strong>Pro Tip:</strong> Use airline tubing to create gentle current - mimics river flow!
+            </div>
+        </section>
+
+        <!-- STAGE 2: JUVENILES (30-60 Days) -->
+        <section class="stage" data-progress="50">
+            <h2><span class="stage-icon">🧒</span> Stage 2: Juveniles (30-60 Days)</h2>
+            
+            <div class="requirements-grid">
+                <div class="req-card">
+                    <h4>🛢️ Container</h4>
+                    <ul class="checklist">
+                        <li>5L per crayfish</li>
+                        <li>Add PVC hides (10cm pieces)</li>
+                        <li>Hornwort/Duckweed 50% coverage</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>💧 Water</h4>
+                    <ul class="checklist">
+                        <li>28-30°C</li>
+                        <li>50% water change every 2 days</li>
+                        <li>Monitor ammonia (plants help!)</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>🍲 Food</h4>
+                    <ul class="checklist">
+                        <li>Chopped shrimp pellets</li>
+                        <li>Boiled carrot/potato</li>
+                        <li>2x daily feeding</li>
+                        <li>Calcium: crushed eggshell</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>📏 Size Goal</h4>
+                    <ul class="checklist">
+                        <li>Start: 1-2cm</li>
+                        <li>End: 3-5cm</li>
+                        <li>Survival: 80%+ target</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 3: SUB-ADULTS (60-90 Days) -->
+        <section class="stage" data-progress="75">
+            <h2><span class="stage-icon">🧑</span> Stage 3: Sub-Adults (60-90 Days)</h2>
+            
+            <div class="requirements-grid">
+                <div class="req-card">
+                    <h4>🛢️ Container</h4>
+                    <ul class="checklist">
+                        <li>10L per crayfish</li>
+                        <li>Separate aggressive ones</li>
+                        <li>Plants + rocks + pipes</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>💧 Water</h4>
+                    <ul class="checklist">
+                        <li>28-30°C</li>
+                        <li>30% water change 2x/week</li>
+                        <li>Snails for cleanup</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>🍲 Food</h4>
+                    <ul class="checklist">
+                        <li>Sinking crayfish pellets</li>
+                        <li>Fish meat/organ</li>
+                        <li>1x daily + grazing</li>
+                        <li>Live bloodworms (treat)</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>📏 Size Goal</h4>
+                    <ul class="checklist">
+                        <li>Start: 3-5cm</li>
+                        <li>End: 6-10cm (Market Ready!)</li>
+                        <li>Survival: 90%+ target</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 4: ADULTS (90+ Days) -->
+        <section class="stage" data-progress="100" style="background: linear-gradient(135deg, rgba(255,107,53,0.3), rgba(247,147,30,0.3));">
+            <h2><span class="stage-icon">👨‍👩‍👧‍👦</span> Stage 4: Adults (90+ Days) - READY TO SELL/BREED!</h2>
+            
+            <div class="requirements-grid">
+                <div class="req-card">
+                    <h4>🎉 Success Metrics</h4>
+                    <ul class="checklist">
+                        <li>Size: 8-12cm (sell @ 50g+)</li>
+                        <li>Color: Bright red/orange</li>
+                        <li>Firm claws, active</li>
+                        <li>Females with eggs? = Breeding time!</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>💰 Market Value</h4>
+                    <ul class="checklist">
+                        <li>$5-15 per adult</li>
+                        <li>100 started → 60 adults = $300-900</li>
+                        <li>30 day cycle repeat!</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>🔄 Next Steps</h4>
+                    <ul class="checklist">
+                        <li>Separate males/females</li>
+                        <li>Breeding tanks (1M:3F)</li>
+                        <li>Harvest & restart cycle</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- GROWTH CALCULATOR -->
+        <section class="calculator">
+            <h3>📊 Growth Calculator</h3>
+            <p>Enter your numbers to see progress:</p>
+            <div>
+                <label>Started with: <input type="number" id="started" value="100" min="1"></label>
+                <label>Current survivors: <input type="number" id="current" value="60" min="1"></label>
+                <label>Days running: <input type="number" id="days" value="45" min="1"></label>
+                <button onclick="calculateGrowth()">Calculate ➡️</button>
+            </div>
+            <div id="calcResult" class="result"></div>
+        </section>
+
+        <div style="text-align: center; padding: 40px; background: rgba(0,0,0,0.4); border-radius: 20px; margin-top: 40px;">
+            <h3>🎯 90-Day Success Formula:</h3>
+            <p style="font-size: 1.5em; margin: 20px 0;">
+                Plants + Hides + Calcium + Right Food = <strong>80-90% Survival!</strong>
+            </p>
+            <button onclick="scrollToTop()" style="font-size: 18px; padding: 20px 40px;">🏠 Back to Top</button>
+        </div>
+    </div>
+
+    <script>
+        // Progress bar animation
+        const stages = document.querySelectorAll('.stage');
+        const progressFill = document.querySelector('.progress-fill');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progress = entry.target.dataset.progress;
+                    progressFill.style.width = progress + '%';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        stages.forEach(stage => observer.observe(stage));
+
+        // Calculator
+        function calculateGrowth() {
+            const started = parseInt(document.getElementById('started').value);
+            const current = parseInt(document.getElementById('current').value);
+            const days = parseInt(document.getElementById('days').value);
+            
+            const survivalRate = ((current / started) * 100).toFixed(1);
+            const projected = Math.round(current * Math.pow(1.2, (90 - days) / 30));
+            const profit = projected * 7; // $7 avg
+            
+            document.getElementById('calcResult').innerHTML = `
+                Survival: <strong>${survivalRate}%</strong> | 
+                Projected Adults: <strong>${projected}</strong> | 
+                Potential Profit: <strong>$${profit.toLocaleString()}</strong>
+            `;
+        }
+
+        // Smooth scroll
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Auto-calculate on input
+        document.querySelectorAll('#started, #current, #days').forEach(input => {
+            input.addEventListener('input', calculateGrowth);
+        });
+        calculateGrowth(); // Initial calc
+    </script>
+</body>
+</html>
